@@ -1,4 +1,4 @@
-# e_notification_interface
+# e_notification_platform_interface
 
 A new Flutter project.
 
