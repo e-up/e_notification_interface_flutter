@@ -1,8 +1,8 @@
 name: e_notification_platform_interface
 description: A new Flutter project.
 version: 0.0.1
-author:
-homepage:
+author: iamee
+homepage: https://iamee.me
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
