@@ -31,6 +31,12 @@ abstract class ENotificationPlatformInterface {
   /// 设置 TAG
   Future<String> setTag(String tag);
 
+  /// 订阅 TOPIC
+  Future<void> subscribe(String topic);
+
+  /// 取消订阅 TOPIC
+  Future<void> unsubscribe(String topic);
+
   /// 消息流
   abstract Stream<ENotificationMessage> notificationMessageStream;
 
