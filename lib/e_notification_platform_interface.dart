@@ -18,7 +18,7 @@ class ENotificationMessage {
   }
 }
 
-abstract class ENotificationInterface {
+abstract class ENotificationPlatformInterface {
   /// 初始化参数
   Future<void> init(Map<String, dynamic> params);
 
