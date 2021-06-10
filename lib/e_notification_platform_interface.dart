@@ -23,13 +23,9 @@ abstract class ENotificationPlatformInterface {
   Future<void> init(Map<String, dynamic> params);
 
   /// 得到设备ID
+  /// 下个版本将失效
+  @deprecated
   Future<String> getDeviceId();
-
-  /// 得到 TAG
-  Future<List<String>> getTags();
-
-  /// 设置 TAG
-  Future<String> setTag(String tag);
 
   /// 订阅 TOPIC
   Future<void> subscribe(String topic);
@@ -37,11 +33,18 @@ abstract class ENotificationPlatformInterface {
   /// 取消订阅 TOPIC
   Future<void> unsubscribe(String topic);
 
-  /// 消息流
+  /// 消息前台 收到的 消息流
   abstract Stream<ENotificationMessage> notificationMessageStream;
 
-  /// 程序后台之后，消息流
+  /// 程序后台 收到的 消息流
   abstract Stream<ENotificationMessage> backgroundNotificationMessageStream;
 
+  /// 程序后台 点击 Notification 之后产生的数据流
+  abstract Stream<ENotificationMessage> notificationClickedStream;
+
+  /// 设备 Token 消息流
+  abstract Stream<String> tokenStream;
+
+  /// 关闭
   Future<void> close();
 }

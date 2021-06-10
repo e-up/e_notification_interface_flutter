@@ -1,3 +1,11 @@
+## [0.3.0] - DeviceId and DeviceToken
+
+* DeviceToken will be changed.
+
+* Add Notification Message Clicked Stream.
+
+* Remove tags futures.
+
 ## [0.2.4] - Flutter Environment
 
 * flutter: ">=1.12.0"
