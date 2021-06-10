@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class ENotificationMessage {
   final String id;
   final String title;
