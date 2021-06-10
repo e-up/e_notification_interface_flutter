@@ -1,7 +1,6 @@
 name: e_notification_platform_interface
-description: A new Flutter project.
+description: Easy to Use Notification Platform Interface
 version: 0.0.1
-author: iamee
 homepage: https://iamee.me
 
 environment:
