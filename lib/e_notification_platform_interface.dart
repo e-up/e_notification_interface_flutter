@@ -36,4 +36,6 @@ abstract class ENotificationPlatformInterface {
 
   /// 程序后台之后，消息流
   abstract Stream<ENotificationMessage> backgroundNotificationMessageStream;
+
+  Future<void> close();
 }
