@@ -1,3 +1,7 @@
+## [0.2.4] - Flutter Environment
+
+* flutter: ">=1.12.0"
+
 ## [0.2.3] - Update ChangLog
 
 ## [0.2.2] - Add Subscribe Topics
