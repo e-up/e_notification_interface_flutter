@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
+
 class ENotificationMessage {
   final String id;
   final String title;
   final String message;
 
   ENotificationMessage(
-      {required this.id, required this.title, required this.message});
+      {@required this.id, @required this.title, @required this.message});
 
   factory ENotificationMessage.fromJson(Map<String, dynamic> json) {
     return ENotificationMessage(
@@ -34,16 +36,16 @@ abstract class ENotificationPlatformInterface {
   Future<void> unsubscribe(String topic);
 
   /// 消息前台 收到的 消息流
-  abstract Stream<ENotificationMessage> notificationMessageStream;
+  Stream<ENotificationMessage> notificationMessageStream;
 
   /// 程序后台 收到的 消息流
-  abstract Stream<ENotificationMessage> backgroundNotificationMessageStream;
+  Stream<ENotificationMessage> backgroundNotificationMessageStream;
 
   /// 程序后台 点击 Notification 之后产生的数据流
-  abstract Stream<ENotificationMessage> notificationClickedStream;
+  Stream<ENotificationMessage> notificationClickedStream;
 
   /// 设备 Token 消息流
-  abstract Stream<String> tokenStream;
+  Stream<String> tokenStream;
 
   /// 关闭
   Future<void> close();

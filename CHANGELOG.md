@@ -1,3 +1,7 @@
+## [0.4.0] - SDKVersion Update to >=2.7.0 <3.0.0
+
+* null safe , need to change a lot of code.
+
 ## [0.3.0] - DeviceId and DeviceToken
 
 * DeviceToken will be changed.
