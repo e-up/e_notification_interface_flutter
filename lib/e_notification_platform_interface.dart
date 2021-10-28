@@ -1,18 +1,23 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
 class ENotificationMessage {
   final String id;
   final String title;
   final String message;
+  final Map<String, dynamic> payload;
 
   ENotificationMessage(
-      {@required this.id, @required this.title, @required this.message});
+      {required this.id,
+      required this.title,
+      required this.message,
+      required this.payload});
 
   factory ENotificationMessage.fromJson(Map<String, dynamic> json) {
     return ENotificationMessage(
         id: json['id'],
         title: json['title'] as String,
-        message: json['message'] as String);
+        message: json['message'] as String,
+        payload: jsonDecode('${(json['payload'] ?? '{}')}'));
   }
 
   Map<String, dynamic> toJson() {
@@ -36,16 +41,16 @@ abstract class ENotificationPlatformInterface {
   Future<void> unsubscribe(String topic);
 
   /// 消息前台 收到的 消息流
-  Stream<ENotificationMessage> notificationMessageStream;
+  late Stream<ENotificationMessage> notificationMessageStream;
 
   /// 程序后台 收到的 消息流
-  Stream<ENotificationMessage> backgroundNotificationMessageStream;
+  late Stream<ENotificationMessage> backgroundNotificationMessageStream;
 
   /// 程序后台 点击 Notification 之后产生的数据流
-  Stream<ENotificationMessage> notificationClickedStream;
+  late Stream<ENotificationMessage> notificationClickedStream;
 
   /// 设备 Token 消息流
-  Stream<String> tokenStream;
+  late Stream<String> tokenStream;
 
   /// 关闭
   Future<void> close();
