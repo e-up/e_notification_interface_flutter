@@ -40,6 +40,9 @@ abstract class ENotificationPlatformInterface {
   /// 取消订阅 TOPIC
   Future<void> unsubscribe(String topic);
 
+  /// 取消订阅所有
+  Future<void> unsubscribeAll();
+
   /// 消息前台 收到的 消息流
   late Stream<ENotificationMessage> notificationMessageStream;
 
