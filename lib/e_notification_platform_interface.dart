@@ -4,12 +4,14 @@ class ENotificationMessage {
   final String id;
   final String title;
   final String message;
+  final int time;
   final Map<String, dynamic> payload;
 
   ENotificationMessage(
       {required this.id,
       required this.title,
       required this.message,
+      required this.time,
       required this.payload});
 
   factory ENotificationMessage.fromJson(Map<String, dynamic> json) {
@@ -17,6 +19,7 @@ class ENotificationMessage {
         id: json['id'],
         title: json['title'] as String,
         message: json['message'] as String,
+        time: json['time'] as int,
         payload: jsonDecode('${(json['payload'] ?? '{}')}'));
   }
 
