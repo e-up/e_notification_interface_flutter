@@ -20,11 +20,16 @@ class ENotificationMessage {
         title: json['title'] as String,
         message: json['message'] as String,
         time: json['time'] as int,
-        payload: jsonDecode('${(json['payload'] ?? '{}')}'));
+        payload: json['payload'] ?? {});
   }
 
   Map<String, dynamic> toJson() {
-    return {'id': this.id, 'title': this.title, 'message': this.message};
+    return {
+      'id': this.id,
+      'title': this.title,
+      'message': this.message,
+      'payload': this.payload
+    };
   }
 }
 
