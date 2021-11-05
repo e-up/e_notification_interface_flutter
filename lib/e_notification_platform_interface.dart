@@ -27,6 +27,7 @@ class ENotificationMessage {
     return {
       'id': this.id,
       'title': this.title,
+      'time': this.time,
       'message': this.message,
       'payload': this.payload
     };
