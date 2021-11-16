@@ -65,7 +65,7 @@ abstract class ENotificationPlatformInterface {
   late Stream<String> tokenStream;
 
   /// 得到初始化的消息
-  Future<ENotificationMessage> getInitialMessage();
+  Future<ENotificationMessage?> getInitialMessage();
 
   /// 关闭
   Future<void> close();
